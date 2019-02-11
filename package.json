@@ -13,6 +13,14 @@
     "version": "npm run build",
     "postversion": "git push --tags && rm -rf dist && rm -rf types"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:maroun-baydoun/de-noun-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maroun-baydoun/de-noun-parser/issues"
+  },
+  "homepage": "http://www.maroun-baydoun.com/projects/de-noun-parser/",
   "author": {
     "name": "Maroun Baydoun",
     "url": "http://www.maroun-baydoun.com/"
