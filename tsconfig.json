@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "ES2015",
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "declaration": true,
+        "strict": true,
+        "declarationDir": "./types"
+    },
+    "files": [
+        "./src/de-noun-parser.ts"
+    ]
+}

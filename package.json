@@ -1,0 +1,49 @@
+{
+  "name": "de-noun-parser",
+  "version": "1.0.0",
+  "description": "Parse Wikitext's de-noun template",
+  "main": "dist/de-noun-parser.js",
+  "types": "types/de-noun-parser.d.ts",
+  "scripts": {
+    "lint": "tslint -c tslint.json --force --fix '{src,test}/**/*.ts'",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "build": "webpack --mode production",
+    "preversion": "npm test",
+    "version": "npm run build",
+    "postversion": "git push --tags && rm -rf dist && rm -rf types"
+  },
+  "author": {
+    "name": "Maroun Baydoun",
+    "url": "http://www.maroun-baydoun.com/"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "types"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^23.0.0",
+    "jest": "^23.0.0",
+    "ts-jest": "^23.10.5",
+    "ts-loader": "^5.3.3",
+    "tslint": "^5.12.1",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^3.3.3",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.ts?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(js?|ts?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json",
+      "node"
+    ]
+  }
+}
