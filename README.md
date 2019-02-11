@@ -1,6 +1,15 @@
 ## de-noun-parser
 ##### Parse Wikitext's de-noun template
 
+
+[![npm version](https://badge.fury.io/js/de-noun-parser.svg)](https://badge.fury.io/js/de-noun-parser)
+
+### Install
+
+``` 
+npm install de-noun-parser 
+```
+
 ### Usage
 
 ``` ts
