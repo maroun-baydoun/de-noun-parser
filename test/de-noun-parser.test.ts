@@ -1,5 +1,10 @@
 import deNounParser from '../src/de-noun-parser';
-import { feminineFixture, masculineFixture, neuterFixture } from './fixtures';
+import {
+  feminineFixture,
+  fixtureWithDiminutive,
+  masculineFixture,
+  neuterFixture,
+} from './fixtures';
 
 describe('de-noun-parser', () => {
   describe('parse', () => {
@@ -7,6 +12,7 @@ describe('de-noun-parser', () => {
       const parsed = deNounParser(feminineFixture);
 
       expect(parsed).toEqual({
+        diminutive: null,
         gender: 'f',
         genetive: null,
         plural: 'Küchen',
@@ -17,6 +23,7 @@ describe('de-noun-parser', () => {
       const parsed = deNounParser(masculineFixture);
 
       expect(parsed).toEqual({
+        diminutive: null,
         gender: 'm',
         genetive: 'Briefträgers',
         plural: 'Briefträger',
@@ -27,9 +34,21 @@ describe('de-noun-parser', () => {
       const parsed = deNounParser(neuterFixture);
 
       expect(parsed).toEqual({
+        diminutive: null,
         gender: 'n',
         genetive: null,
         plural: 'Zentren',
+      });
+    });
+
+    it('returns parsed object for noun with diminutive', () => {
+      const parsed = deNounParser(fixtureWithDiminutive);
+
+      expect(parsed).toEqual({
+        diminutive: 'Lämpchen',
+        gender: 'f',
+        genetive: null,
+        plural: 'Lampen',
       });
     });
 

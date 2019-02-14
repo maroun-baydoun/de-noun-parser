@@ -23,6 +23,7 @@ const parsed = parse(wikitext);
 
 {
     gender: string,
+    diminutive: string | null,
     genetive: string | null,
     plural: string
 }

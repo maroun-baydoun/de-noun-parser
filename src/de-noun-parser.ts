@@ -11,8 +11,9 @@ export const parse = (wikitext: string) => {
   }
 
   return {
+    diminutive: tokens[3] || null,
     gender: tokens[0],
-    genetive: tokens[1] ? tokens[1] : null,
+    genetive: tokens[1] || null,
     plural: tokens[2],
   };
 };
