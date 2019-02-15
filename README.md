@@ -19,23 +19,19 @@ import parse from 'de-noun-parser';
 const wikitext = '...';
 const parsed = parse(wikitext);
 
-// When parsing is successful:
-
-{
-    diminutive: string | null,
-    gender: string,
-    genderedForm: string | null,
-    genetive: string | null,
-    plural: string
-}
-
-// When parsing is not successful:
-
-null
-
 ```
 
+### Parse result
 
+| Field    |      Type           |  Note      |
+|----------|---------------------|------------|
+| **gender**   |  `string`       | `m` or `f` |
+| **plural**   |  `string`       |            |
+| **genetive** | `string | null` | If `null`, the genetive form should default to the word + s  <br/> for masculine or neuter nouns, and the noun itself when feminine      |
+| **diminutive** | `string | null` |           |
+| **genderedForm** | `string | null` |      If applicable, the feminine form of a masculine noun, <br/> or the masculine form of a feminine noun     |
+
+If the parsing is not successful, the parsed result will be `null`.
 
 ### About de-noun template
 
