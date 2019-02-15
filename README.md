@@ -27,9 +27,9 @@ const parsed = parse(wikitext);
 |----------|---------------------|------------|
 | **gender**   |  `string`       | `m` or `f` |
 | **plural**   |  `string`       |            |
-| **genetive** | `string | null` | If `null`, the genetive form should default to the word + s  <br/> for masculine or neuter nouns, and the noun itself when feminine      |
-| **diminutive** | `string | null` |           |
-| **genderedForm** | `string | null` |      If applicable, the feminine form of a masculine noun, <br/> or the masculine form of a feminine noun     |
+| **genetive** | `string \| null` | If `null`, the genetive form should default to the word + s  <br/> for masculine or neuter nouns, and the noun itself when feminine      |
+| **diminutive** | `string \| null`|           |
+| **genderedForm** | `string \| null` |      If applicable, the feminine form of a masculine noun, <br/> or the masculine form of a feminine noun     |
 
 If the parsing is not successful, the parsed result will be `null`.
 
