@@ -2,19 +2,30 @@
 export const parse = (wikitext: string) => {
   const startIndex = wikitext.indexOf('{{de-noun|') + '{{de-noun|'.length;
   const endIndex = wikitext.indexOf('}}', startIndex);
-  const tokens = wikitext.substring(startIndex, endIndex)
-                         .split('|')
-                         .filter(token => token.indexOf('=') === -1);
 
-  if (tokens.length < 3) {
+  const tokens = wikitext.substring(startIndex, endIndex).split('|');
+  const baseTokens =  tokens.filter(token => token.indexOf('=') === -1);
+  const additionalTokens = tokens.filter(token => token.indexOf('=') !== -1);
+
+  if (baseTokens.length < 3) {
     return null;
   }
 
+  const gender = baseTokens[0];
+  const genetive = baseTokens[1] || null;
+  const plural = baseTokens[2];
+  const diminutive = baseTokens[3] || null;
+  const genderedForms = additionalTokens.filter(token => (
+    token.indexOf('f=') !== -1 || token.indexOf('m=') !== -1
+  ));
+  const genderedForm = genderedForms.length ? genderedForms[0].split('=')[1] : null;
+
   return {
-    diminutive: tokens[3] || null,
-    gender: tokens[0],
-    genetive: tokens[1] || null,
-    plural: tokens[2],
+    diminutive,
+    gender,
+    genderedForm,
+    genetive,
+    plural,
   };
 };
 

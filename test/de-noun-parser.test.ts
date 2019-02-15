@@ -1,8 +1,10 @@
 import deNounParser from '../src/de-noun-parser';
 import {
   feminineFixture,
+  feminineFixtureWithGenderedForm,
   fixtureWithDiminutive,
   masculineFixture,
+  masculineFixtureWithGenderedForm,
   neuterFixture,
 } from './fixtures';
 
@@ -14,6 +16,7 @@ describe('de-noun-parser', () => {
       expect(parsed).toEqual({
         diminutive: null,
         gender: 'f',
+        genderedForm: null,
         genetive: null,
         plural: 'Küchen',
       });
@@ -25,8 +28,9 @@ describe('de-noun-parser', () => {
       expect(parsed).toEqual({
         diminutive: null,
         gender: 'm',
-        genetive: 'Briefträgers',
-        plural: 'Briefträger',
+        genderedForm: null,
+        genetive: null,
+        plural: 'Honige',
       });
     });
 
@@ -36,6 +40,7 @@ describe('de-noun-parser', () => {
       expect(parsed).toEqual({
         diminutive: null,
         gender: 'n',
+        genderedForm: null,
         genetive: null,
         plural: 'Zentren',
       });
@@ -47,8 +52,33 @@ describe('de-noun-parser', () => {
       expect(parsed).toEqual({
         diminutive: 'Lämpchen',
         gender: 'f',
+        genderedForm: null,
         genetive: null,
         plural: 'Lampen',
+      });
+    });
+
+    it('returns parsed object for masculine noun with gendered form', () => {
+      const parsed = deNounParser(masculineFixtureWithGenderedForm);
+
+      expect(parsed).toEqual({
+        diminutive: null,
+        gender: 'm',
+        genderedForm: 'Briefträgerin',
+        genetive: 'Briefträgers',
+        plural: 'Briefträger',
+      });
+    });
+
+    it('returns parsed object for feminine noun with gendered form', () => {
+      const parsed = deNounParser(feminineFixtureWithGenderedForm);
+
+      expect(parsed).toEqual({
+        diminutive: null,
+        gender: 'f',
+        genderedForm: 'Student',
+        genetive: null,
+        plural: 'Studentinnen',
       });
     });
 

@@ -22,8 +22,9 @@ const parsed = parse(wikitext);
 // When parsing is successful:
 
 {
-    gender: string,
     diminutive: string | null,
+    gender: string,
+    genderedForm: string | null,
     genetive: string | null,
     plural: string
 }
