@@ -6,6 +6,7 @@ import {
   masculineFixture,
   masculineFixtureWithGenderedForm,
   neuterFixture,
+  feminineFixtureWithImplicitEnPlural,
 } from './fixtures';
 
 describe('de-noun-parser', () => {
@@ -79,6 +80,18 @@ describe('de-noun-parser', () => {
         genderedForm: 'Student',
         genetive: null,
         plural: 'Studentinnen',
+      });
+    });
+
+    it('returns parsed object for feminine noun with implicit -en plural', () => {
+      const parsed = deNounParser(feminineFixtureWithImplicitEnPlural);
+
+      expect(parsed).toEqual({
+        diminutive: null,
+        gender: 'f',
+        genderedForm: null,
+        genetive: null,
+        plural: '-en',
       });
     });
 

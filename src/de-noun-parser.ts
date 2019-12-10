@@ -7,13 +7,14 @@ export const parse = (wikitext: string) => {
   const baseTokens =  tokens.filter(token => token.indexOf('=') === -1);
   const additionalTokens = tokens.filter(token => token.indexOf('=') !== -1);
 
-  if (baseTokens.length < 3) {
+  const gender = baseTokens[0];
+  
+  if(['f', 'm', 'n'].indexOf(gender) < 0) {
     return null;
   }
 
-  const gender = baseTokens[0];
   const genetive = baseTokens[1] || null;
-  const plural = baseTokens[2];
+  const plural = baseTokens[2] || '-en';
   const diminutive = baseTokens[3] || null;
   const genderedForms = additionalTokens.filter(token => (
     token.indexOf('f=') !== -1 || token.indexOf('m=') !== -1

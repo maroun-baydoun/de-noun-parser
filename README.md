@@ -25,8 +25,8 @@ const parsed = parse(wikitext);
 
 | Field    |      Type           |  Note      |
 |----------|---------------------|------------|
-| **gender**   |  `string`       | `m` or `f` |
-| **plural**   |  `string`       |            |
+| **gender**   |  `string`       | `m` or `f` or `n` |
+| **plural**   |  `string`       | If `-en`, the plural form should default to word + -en            |
 | **genetive** | `string \| null` | If `null`, the genetive form should default to the word + s  <br/> for masculine or neuter nouns, and the noun itself when feminine      |
 | **diminutive** | `string \| null`|           |
 | **genderedForm** | `string \| null` |      If applicable, the feminine form of a masculine noun, <br/> or the masculine form of a feminine noun     |
