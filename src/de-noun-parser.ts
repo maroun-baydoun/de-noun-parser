@@ -13,7 +13,7 @@ export const parse = (wikitext: string) => {
     return null;
   }
 
-  const genetive = baseTokens[1] || (gender === 'm' ? '-s' : null);
+  const genetive = baseTokens[1] || (gender === 'm' || gender === 'n' ? '-s' : null);
   const plural = baseTokens[2] || '-en';
   const diminutive = baseTokens[3] || null;
   const genderedForms = additionalTokens.filter(token => (

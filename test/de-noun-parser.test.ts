@@ -8,6 +8,7 @@ import {
   neuterFixture,
   feminineFixtureWithImplicitEnPlural,
   masculineFixtureWithImplicitSGenetive,
+  neuterFixtureWithImplicitSGenetive,
 } from './fixtures';
 
 describe('de-noun-parser', () => {
@@ -43,8 +44,8 @@ describe('de-noun-parser', () => {
         diminutive: null,
         gender: 'n',
         genderedForm: null,
-        genetive: null,
-        plural: 'Zentren',
+        genetive: 'Flugzeugs',
+        plural: 'Flugzeuge',
       });
     });
 
@@ -105,6 +106,18 @@ describe('de-noun-parser', () => {
         genderedForm: null,
         genetive: '-s',
         plural: 'Honige',
+      });
+    });
+
+    it('returns parsed object for neuter noun with implicit -s genetive', () => {
+      const parsed = deNounParser(neuterFixtureWithImplicitSGenetive);
+
+      expect(parsed).toEqual({
+        diminutive: null,
+        gender: 'n',
+        genderedForm: null,
+        genetive: '-s',
+        plural: 'Zentren',
       });
     });
 
