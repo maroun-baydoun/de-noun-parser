@@ -10,8 +10,8 @@
     "test:watch": "jest --watch",
     "build": "webpack --mode production",
     "preversion": "npm test",
-    "version": "npm run build",
-    "postversion": "git push --tags && rm -rf dist && rm -rf types"
+    "version": "rm -rf dist && rm -rf types && npm run build",
+    "postversion": "git push --tags"
   },
   "repository": {
     "type": "git",

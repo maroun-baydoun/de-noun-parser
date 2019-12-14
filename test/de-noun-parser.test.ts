@@ -30,8 +30,8 @@ describe('de-noun-parser', () => {
         diminutive: null,
         gender: 'm',
         genderedForm: null,
-        genetive: null,
-        plural: 'Honige',
+        genetive: 'Kühlschrankes',
+        plural: 'Kühlschränke',
       });
     });
 
