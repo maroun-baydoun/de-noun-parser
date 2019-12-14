@@ -7,6 +7,7 @@ import {
   masculineFixtureWithGenderedForm,
   neuterFixture,
   feminineFixtureWithImplicitEnPlural,
+  masculineFixtureWithImplicitSGenetive,
 } from './fixtures';
 
 describe('de-noun-parser', () => {
@@ -92,6 +93,18 @@ describe('de-noun-parser', () => {
         genderedForm: null,
         genetive: null,
         plural: '-en',
+      });
+    });
+
+    it('returns parsed object for masculine noun with implicit -s genetive', () => {
+      const parsed = deNounParser(masculineFixtureWithImplicitSGenetive);
+
+      expect(parsed).toEqual({
+        diminutive: null,
+        gender: 'm',
+        genderedForm: null,
+        genetive: '-s',
+        plural: 'Honige',
       });
     });
 
