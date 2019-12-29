@@ -4,12 +4,12 @@ export const parse = (wikitext: string) => {
   const endIndex = wikitext.indexOf('}}', startIndex);
 
   const tokens = wikitext.substring(startIndex, endIndex).split('|');
-  const baseTokens =  tokens.filter(token => token.indexOf('=') === -1);
+  const baseTokens = tokens.filter(token => token.indexOf('=') === -1);
   const additionalTokens = tokens.filter(token => token.indexOf('=') !== -1);
 
   const gender = baseTokens[0];
-  
-  if(['f', 'm', 'n'].indexOf(gender) < 0) {
+
+  if (['f', 'm', 'n'].indexOf(gender) < 0) {
     return null;
   }
 
@@ -22,11 +22,11 @@ export const parse = (wikitext: string) => {
   const genderedForm = genderedForms.length ? genderedForms[0].split('=')[1] : null;
 
   return {
-    diminutive,
     gender,
-    genderedForm,
-    genetive,
     plural,
+    genetive,
+    ...(diminutive !== null && { diminutive }),
+    ...(genderedForm !== null && { genderedForm }),
   };
 };
 

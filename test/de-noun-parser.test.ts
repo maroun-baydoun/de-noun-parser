@@ -17,9 +17,7 @@ describe('de-noun-parser', () => {
       const parsed = deNounParser(feminineFixture);
 
       expect(parsed).toEqual({
-        diminutive: null,
         gender: 'f',
-        genderedForm: null,
         genetive: null,
         plural: 'Küchen',
       });
@@ -29,9 +27,7 @@ describe('de-noun-parser', () => {
       const parsed = deNounParser(masculineFixture);
 
       expect(parsed).toEqual({
-        diminutive: null,
         gender: 'm',
-        genderedForm: null,
         genetive: 'Kühlschrankes',
         plural: 'Kühlschränke',
       });
@@ -41,9 +37,7 @@ describe('de-noun-parser', () => {
       const parsed = deNounParser(neuterFixture);
 
       expect(parsed).toEqual({
-        diminutive: null,
         gender: 'n',
-        genderedForm: null,
         genetive: 'Flugzeugs',
         plural: 'Flugzeuge',
       });
@@ -55,7 +49,6 @@ describe('de-noun-parser', () => {
       expect(parsed).toEqual({
         diminutive: 'Lämpchen',
         gender: 'f',
-        genderedForm: null,
         genetive: null,
         plural: 'Lampen',
       });
@@ -65,7 +58,6 @@ describe('de-noun-parser', () => {
       const parsed = deNounParser(masculineFixtureWithGenderedForm);
 
       expect(parsed).toEqual({
-        diminutive: null,
         gender: 'm',
         genderedForm: 'Briefträgerin',
         genetive: 'Briefträgers',
@@ -77,7 +69,6 @@ describe('de-noun-parser', () => {
       const parsed = deNounParser(feminineFixtureWithGenderedForm);
 
       expect(parsed).toEqual({
-        diminutive: null,
         gender: 'f',
         genderedForm: 'Student',
         genetive: null,
@@ -89,9 +80,7 @@ describe('de-noun-parser', () => {
       const parsed = deNounParser(feminineFixtureWithImplicitEnPlural);
 
       expect(parsed).toEqual({
-        diminutive: null,
         gender: 'f',
-        genderedForm: null,
         genetive: null,
         plural: '-en',
       });
@@ -101,9 +90,7 @@ describe('de-noun-parser', () => {
       const parsed = deNounParser(masculineFixtureWithImplicitSGenetive);
 
       expect(parsed).toEqual({
-        diminutive: null,
         gender: 'm',
-        genderedForm: null,
         genetive: '-s',
         plural: 'Honige',
       });
@@ -113,9 +100,7 @@ describe('de-noun-parser', () => {
       const parsed = deNounParser(neuterFixtureWithImplicitSGenetive);
 
       expect(parsed).toEqual({
-        diminutive: null,
         gender: 'n',
-        genderedForm: null,
         genetive: '-s',
         plural: 'Zentren',
       });
