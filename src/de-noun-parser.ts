@@ -1,5 +1,7 @@
+import { Gender, ParseResult } from './types';
+import { UnrecognisedGenderError } from './errors';
 
-export const parse = (wikitext: string) => {
+export const parse = (wikitext: string): ParseResult => {
   const startIndex = wikitext.indexOf('{{de-noun|') + '{{de-noun|'.length;
   const endIndex = wikitext.indexOf('}}', startIndex);
 
@@ -7,12 +9,11 @@ export const parse = (wikitext: string) => {
   const baseTokens = tokens.filter(token => token.indexOf('=') === -1);
   const additionalTokens = tokens.filter(token => token.indexOf('=') !== -1);
 
-  const gender = baseTokens[0];
 
-  if (['f', 'm', 'n'].indexOf(gender) < 0) {
-    return null;
+  if (['f', 'm', 'n'].indexOf(baseTokens[0]) < 0) {
+    throw new UnrecognisedGenderError(`Expected m, f or n, but recieved ${baseTokens[0]}`);
   }
-
+  const gender = baseTokens[0] as Gender;
   const genetive = baseTokens[1] || (gender === 'm' || gender === 'n' ? '-s' : null);
   const plural = baseTokens[2] || '-en';
   const diminutive = baseTokens[3] || null;

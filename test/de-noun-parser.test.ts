@@ -1,4 +1,5 @@
 import deNounParser from '../src/de-noun-parser';
+import { UnrecognisedGenderError } from '../src/errors';
 import {
   feminineFixture,
   feminineFixtureWithGenderedForm,
@@ -106,10 +107,10 @@ describe('de-noun-parser', () => {
       });
     });
 
-    it('returns null when unable to parse', () => {
-      const parsed = deNounParser('I am a random text');
-
-      expect(parsed).toBeNull();
+    it('throws UnrecognisedGenderError when unable to parse', () => {
+      expect(() => deNounParser('I am a random text')).toThrow(
+        new UnrecognisedGenderError('Expected m, f or n, but recieved I am a ra'),
+      );
     });
   });
 });
