@@ -1,5 +1,5 @@
-import deNounParser from '../src/de-noun-parser';
-import { UnrecognisedGenderError } from '../src/errors';
+import deNounParser, { UnrecognisedGenderError } from '../src/de-noun-parser';
+
 import {
   feminineFixture,
   feminineFixtureWithGenderedForm,
@@ -21,6 +21,7 @@ describe('de-noun-parser', () => {
         gender: 'f',
         genetive: null,
         plural: 'Küchen',
+        diminutive: "Küchlein",
       });
     });
 

@@ -1,17 +1,82 @@
-export const feminineFixture = '{{also|kuche}} ==German== ===Etymology=== From {{inh|de|goh|chuhhina}}, from late {{inh|de|gem-pro|*kukinǭ}}, from {{der|de|VL.|*cocīna}}, from {{der|de|la|coquīna}}. See there for cognates and details. ===Pronunciation=== * {{IPA|/ˈkʏçə/|lang=de}} {{a|standard}} ** {{audio|De-at-Küche.ogg|audio (Austria)|lang=de}} * {{IPA|/ˈkyːçə/|lang=de}} {{a|sometimes in Low German areas}} ** {{audio|De-Küche.ogg|Audio|lang=de}} ===Noun=== {{de-noun|f||Küchen}} # [[kitchen]] {{gloss|room}} # {{l|en|cuisine}} {{gloss|cooking traditions}} ====Declension==== {{de-decl-noun-f|n}} ====Derived terms==== * {{l|de|küchen-}} * {{l|de|Küchenmaschine}} ===Further reading=== * {{R:Duden}} [[Category:de:Rooms]]';
+export const feminineFixture = `
+===Noun===
+{{de-noun|f||Küchen|Küchlein}}
 
-export const masculineFixture = '==German== ===Etymology=== Compound of [[kühl]] \"[[cool]]\" + [[Schrank]] \"[[cabinet]]\". ===Pronunciation=== * {{IPA|de|/ˈkyːlˌʃʀaŋk/}} * {{audio|de|De-Kühlschrank.ogg|audio}} ===Noun=== {{de-noun|m|Kühlschrankes|gen2=Kühlschranks|Kühlschränke}} # [[refrigerator]] ====Declension==== {{de-decl-noun-m|(e)s|pl=Kühlschränke}} ====Hyponyms==== * {{l|de|Tiefkühlschrank||deep freezer}} ====Related terms==== * {{l|de|Kühlfach}} * {{l|de|Kühlregal}} * {{l|de|Küchenschrank}} ===Further reading=== * {{R:Duden}} [[Category:de:Home appliances]]';
+# [[kitchen]] {{gloss|room}}
+# {{l|en|cuisine}} {{gloss|cooking traditions}}
 
-export const neuterFixture = '==German== ===Etymology=== {{compound|de|Flug|Zeug}} ===Pronunciation=== * {{IPA|de|/ˈfluːktsɔʏ̯k/}} * {{audio|de|De-Flugzeug.ogg|audio (Germany)}} * {{audio|de|De-at-Flugzeug.ogg|audio (Austria)}} ===Noun=== {{de-noun|n|Flugzeugs|gen2=Flugzeuges|Flugzeuge}} # [[airplane]] ====Declension==== {{de-decl-noun-n|(e)s|e}} ====Synonyms==== * {{l|de|Aeroplan|g=n|g2=m}} ====Derived terms==== * {{l|de|Flugzeugträger}} * {{l|de|Segelflugzeug}} * {{l|de|Ultraleichtflugzeug}} ===Further reading=== * {{R:Duden}} [[Category:de:Aircraft]] [[Category:de:Aviation]]';
+`;
 
-export const fixtureWithDiminutive = '{{also|lampe|lampé}} ==German== ===Etymology=== From {{etyl|gmh|de}} {{m|gmh|lampe}}. ===Pronunciation=== * {{IPA|/ˈlampə/|lang=de}} * {{audio|De-Lampe.ogg|audio|lang=de}} ===Noun=== {{de-noun|f||Lampen|Lämpchen|dim2=Lämplein}} # [[lamp]], [[light]] {{gloss|piece of furniture, or fixture mounted on a wall or ceiling, holding one or more electric light sockets}} # [[bulb]], [[light bulb]] {{gloss|evacuated glass bulb containing a metal filament or an article that resembles such a bulb}} ====Declension==== {{de-decl-noun-f|n}} ====Related terms==== * {{l|de|Lampenschirm}} * {{l|de|Lavalampe}} * {{l|de|Taschenlampe}} * {{l|de|Lampion}} * {{l|de|Stehlampe}} * {{l|de|Meister Lampe}} * {{l|de|Schreibtischlampe}} ===Anagrams=== * {{l|de|Ampel}} * {{l|de|Palme}}';
+export const masculineFixture = `
+===Noun===
+{{de-noun|m|Kühlschrankes|gen2=Kühlschranks|Kühlschränke}}
 
-export const masculineFixtureWithGenderedForm = '==German== ===Pronunciation=== * {{audio|De-Briefträger.ogg|Audio|lang=de}} ===Noun=== {{de-noun|m|Briefträgers|Briefträger|f=Briefträgerin}} # [[mailman]], [[postman]], [[postie]], [[letter carrier]], [[mail carrier]], [[mailperson]] (male or of unspecified sex) ====Declension==== {{de-decl-noun-m|s}} ====Synonyms==== * {{l|de|Briefzusteller}} * {{l|de|Postbote}} ===Further reading=== * {{R:Duden}} [[Category:de:Occupations]] [[Category:de:Post]]';
+# [[refrigerator]]
 
-export const feminineFixtureWithGenderedForm = '==German== ===Etymology=== {{suffix|Student|in|lang=de}} ===Noun=== {{de-noun|f||Studentinnen|m=Student}} # female [[student]] ====Declension==== {{de-decl-noun-f|nen}} ===Further reading=== * {{R:Duden}}';
+`;
 
-export const feminineFixtureWithImplicitEnPlural = '==German== ===Pronunciation=== * {{audio|de|De-Sitzung.ogg|Audio}} ===Noun=== {{de-noun|f}} # [[meeting]] # [[session]] # [[assembly]] # [[sitting]] ====Synonyms==== * {{sense|meeting}} {{l|de|Besprechung}} * {{sense|session}} {{l|de|Sitzungsperiode}} * {{sense|assembly}} {{l|de|Versammlung}} ====See also==== * {{l|de|sitzen}} ===Further reading=== * {{R:Duden}}';
+export const neuterFixture = `
+===Noun===
+{{de-noun|n|Flugzeugs|gen2=Flugzeuges|Flugzeuge}}
 
-export const masculineFixtureWithImplicitSGenetive = `{{also|honig}} ==German== {{wikipedia|lang=de}} [[Image:Runny hunny.jpg|thumb|ein Honigglas mit ''Honig'']] ===Etymology=== From {{inh|de|gmh|}}, from {{inh|de|goh|honag}}, from {{inh|de|gem-pro|*hunagą}}. ===Pronunciation=== * {{IPA|de|/ˈhoːnɪç/}} {{qualifier|standard}} * {{IPA|de|/ˈhoːnɪk/}} {{qualifier|common form in southern Germany, Austria, and Switzerland}} * {{hyphenation|de|Ho|nig}} * {{audio|de|De-Honig.ogg|Audio}} ===Noun=== {{de-noun|m||Honige}} # [[honey]] ====Declension==== {{de-decl-noun-m|s|e}} ====Synonyms==== * {{l|de|Bienenhonig}} ====Hypernyms==== * {{l|de|Lebensmittel}} ====Hyponyms==== * {{l|de|Akazienhonig}} * {{l|de|Biohonig}} * {{l|de|Blatthonig}} * {{l|de|Blütenhonig}} * {{l|de|Glatthonig}} * {{l|de|Heidehonig}} * {{l|de|Honigtauhonig}} * {{l|de|Kleehonig}} * {{l|de|Landhonig}} * {{l|de|Lavendelhonig}} * {{l|de|Lindenblütenhonig}} * {{l|de|Naturhonig}} * {{l|de|Rapshonig}} * {{l|de|Tannenhonig}} * {{l|de|Waldhonig}} * {{l|de|Wildhonig}} ====Derived terms==== * {{l|de|Honigbiene|g=f}} ===Further reading=== * {{R:Canoo}} * {{R:Duden}} * {{R:DWDS}} * {{R:Grimm}} * {{R:UniLeipzig}}`;
+# [[airplane]]
 
-export const neuterFixtureWithImplicitSGenetive = '==German== ===Alternative forms=== * {{alter|de|Centrum||pre-1901}} ===Etymology=== Borrowed from {{bor|de|la|centrum|t=centre}}, from {{der|de|grc|κέντρον|t=centre of a circle, thorn}}. ===Pronunciation=== * {{IPA|/ˈt͡sɛntʁʊm/|lang=de}} * {{audio|De-Zentrum.ogg|Audio|lang=de}} ===Noun=== {{de-noun|n||Zentren}} # [[center]], [[centre]]; [[central]] [[point]] #: {{syn|de|Mitte|Mittelpunkt|Kern|Hauptsache}} #: {{ant|de|Rand|Hülle|Oberfläche|Peripherie|Nebensache}} # {{lb|de|politics}} the [[centre]], the…he [[space]]s d4, d5, e4, e5 on a [[chessboard]] ====Declension==== {{de-decl-noun-n|s|pl=Zentren|n}} ====Derived terms==== {{der3 |{{l|de|Einkaufszentrum}} |{{l|de|Kontrollzentrum}} |{{l|de|Stadtzentrum}} |lang=de}} ===Further reading=== * {{R:Duden}} ---- ==Hunsrik== ===Pronunciation=== * {{IPA|/ˈt͡sɛntrum/|lang=hrx}} ===Noun=== {{head|hrx|noun|g=n|plural|Zentre}} # [[center]] ===Further reading=== * [https://hunsriqueanoriograndense.wordpress.com/dicionario-werterbuch/ Online Hunsrik Dictionary]';
+`;
+
+export const fixtureWithDiminutive = `
+===Noun===
+{{de-noun|f||Lampen|Lämpchen|dim2=Lämplein}}
+
+# [[lamp]], [[light]] {{gloss|piece of furniture, or fixture mounted on a wall or ceiling, holding one or more electric light sockets}}
+# [[bulb]], [[light bulb]] {{gloss|evacuated glass bulb containing a metal filament or an article that resembles such a bulb}} ({{clipping of|de|Glühlampe}})
+
+`;
+
+export const masculineFixtureWithGenderedForm = `
+===Noun===
+{{de-noun|m|Briefträgers|Briefträger|f=Briefträgerin}}
+
+# [[mailman]], [[postman]], [[postie]], [[letter carrier]], [[mail carrier]], [[mailperson]] (male or of unspecified sex)
+
+`;
+
+export const feminineFixtureWithGenderedForm = `
+===Noun===
+{{de-noun|f||Studentinnen|m=Student}}
+
+# [[student]] (female) (person attending lectures at a university)
+
+`;
+
+export const feminineFixtureWithImplicitEnPlural = `
+===Noun===
+{{de-noun|f}}
+
+# [[meeting]]
+# [[session]]
+# [[assembly]]
+# [[sitting]]
+
+`;
+
+export const masculineFixtureWithImplicitSGenetive = `
+===Noun===
+{{de-noun|m||Honige}}
+
+# [[honey]]
+
+`;
+
+export const neuterFixtureWithImplicitSGenetive = `
+===Noun===
+{{de-noun|n||Zentren}}
+
+# [[center]], [[centre]]; [[central]] [[point]]
+#: {{syn|de|Mitte|Mittelpunkt|Kern|Hauptsache}}
+#: {{ant|de|Rand|Hülle|Oberfläche|Peripherie|Nebensache}}
+# {{lb|de|politics}} the [[centre]], the moderate political parties
+# {{lb|de|politics}} the Centre Party, a Catholic political party in pre-war Germany
+# {{lb|de|mathematics}} the [[centre]] of a [[group]], [[ring]], [[Lie algebra]], etc.
+# {{lb|de|chess}} the [[space]]s d4, d5, e4, e5 on a [[chessboard]]
+
+`;

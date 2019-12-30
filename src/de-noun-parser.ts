@@ -1,5 +1,29 @@
-import { Gender, ParseResult } from './types';
-import { UnrecognisedGenderError } from './errors';
+
+export type Gender = 'm' | 'f' | 'n';
+
+export type ParseResult = {
+  gender: Gender,
+  plural: string,
+  genetive: string | null,
+  diminutive?: string,
+  genderedForm?: string,
+};
+
+
+export class ParsingError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "ParsingError";
+  }
+}
+
+export class UnrecognisedGenderError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "UnrecognisedGenderError";
+  }
+}
+
 
 export const parse = (wikitext: string): ParseResult => {
   const startIndex = wikitext.indexOf('{{de-noun|') + '{{de-noun|'.length;
@@ -13,6 +37,7 @@ export const parse = (wikitext: string): ParseResult => {
   if (['f', 'm', 'n'].indexOf(baseTokens[0]) < 0) {
     throw new UnrecognisedGenderError(`Expected m, f or n, but recieved ${baseTokens[0]}`);
   }
+
   const gender = baseTokens[0] as Gender;
   const genetive = baseTokens[1] || (gender === 'm' || gender === 'n' ? '-s' : null);
   const plural = baseTokens[2] || '-en';
