@@ -5,6 +5,7 @@ export type ParseResult = {
   gender: Gender,
   plural: string,
   genetive: string | null,
+  definitions: string[],
   diminutive?: string,
   genderedForm?: string,
 };
@@ -13,14 +14,14 @@ export type ParseResult = {
 export class ParsingError extends Error {
   constructor(message: string) {
     super(message);
-    this.name = "ParsingError";
+    this.name = 'ParsingError';
   }
 }
 
 export class UnrecognisedGenderError extends Error {
   constructor(message: string) {
     super(message);
-    this.name = "UnrecognisedGenderError";
+    this.name = 'UnrecognisedGenderError';
   }
 }
 
@@ -51,9 +52,39 @@ export const parse = (wikitext: string): ParseResult => {
     gender,
     plural,
     genetive,
+    definitions: parseDefinitions(wikitext, wikitext.indexOf('#', endIndex)),
     ...(diminutive !== null && { diminutive }),
     ...(genderedForm !== null && { genderedForm }),
   };
 };
+
+
+
+const parseDefinitions = (wikitext: string, startIndex: number, definitions: string[] = []): string[] => {
+  const newLineIndex = wikitext.indexOf('\n', startIndex);
+  const definition = wikitext.substring(startIndex, newLineIndex)
+    //Remove the leading # and space
+    .replace(/^#\s/, '')
+    //Replace [[definition]] with `definition`
+    .replace(/\[\[([^,\]\[]+)\]\]/g, '$1')
+    //Replace {{gloss|word}} with (word)
+    .replace(/{{gloss\|([^{}]+)}}/g, '($1)')
+    //Replace {{label|lang|word}} with `word`
+    .replace(/{{(?:lb|lbl|label)\|[\w-]+\|(.[^{}]+)}}/g, '($1)')
+    //Replace {{link|lang|word}} with `word`
+    .replace(/{{(?:l|link)\|[\w-]+\|(.[^{}]+)}}/g, '$1')
+    //Replace {{clipping of|lang|word}} with `Short for word`
+    .replace(/{{clipping of\|[\w-]+\|(.[^{}]+)}}/g, 'Short for $1')
+    //Replace {{short for|lang|word}} with `Short for word`
+    .replace(/{{short for\|[\w-]+\|(.[^{}]+)}}/g, 'Short for $1')
+    .trim();
+
+  if (wikitext.charAt(newLineIndex + 1) !== '#') {
+    return [...definitions, definition].filter(def => def.match(/^(#:|#\*)\s/) == null);
+  }
+
+  return parseDefinitions(wikitext, newLineIndex + 1, [...definitions, definition]);
+
+}
 
 export default parse;

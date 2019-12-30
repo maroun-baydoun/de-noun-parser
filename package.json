@@ -5,7 +5,8 @@
   "main": "dist/de-noun-parser.js",
   "types": "types/de-noun-parser.d.ts",
   "scripts": {
-    "lint": "eslint --ext=ts src",
+    "lint": "eslint --ext=ts src test",
+    "lint:fix": "eslint --ext=ts --fix src test",
     "test": "jest",
     "test:watch": "jest --watch",
     "build": "webpack --mode production",

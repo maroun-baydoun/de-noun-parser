@@ -21,7 +21,11 @@ describe('de-noun-parser', () => {
         gender: 'f',
         genetive: null,
         plural: 'Küchen',
-        diminutive: "Küchlein",
+        diminutive: 'Küchlein',
+        definitions: [
+          'kitchen (room)',
+          'cuisine (cooking traditions)',
+        ],
       });
     });
 
@@ -32,6 +36,9 @@ describe('de-noun-parser', () => {
         gender: 'm',
         genetive: 'Kühlschrankes',
         plural: 'Kühlschränke',
+        definitions: [
+          'refrigerator',
+        ],
       });
     });
 
@@ -42,6 +49,9 @@ describe('de-noun-parser', () => {
         gender: 'n',
         genetive: 'Flugzeugs',
         plural: 'Flugzeuge',
+        definitions: [
+          'airplane',
+        ],
       });
     });
 
@@ -53,6 +63,10 @@ describe('de-noun-parser', () => {
         gender: 'f',
         genetive: null,
         plural: 'Lampen',
+        definitions: [
+          'lamp, light (piece of furniture, or fixture mounted on a wall or ceiling, holding one or more electric light sockets)',
+          'bulb, light bulb (evacuated glass bulb containing a metal filament or an article that resembles such a bulb) (Short for Glühlampe)',
+        ],
       });
     });
 
@@ -64,6 +78,9 @@ describe('de-noun-parser', () => {
         genderedForm: 'Briefträgerin',
         genetive: 'Briefträgers',
         plural: 'Briefträger',
+        definitions: [
+          'mailman, postman, postie, letter carrier, mail carrier, mailperson (male or of unspecified sex)',
+        ],
       });
     });
 
@@ -75,6 +92,9 @@ describe('de-noun-parser', () => {
         genderedForm: 'Student',
         genetive: null,
         plural: 'Studentinnen',
+        definitions: [
+          'student (female) (person attending lectures at a university)',
+        ],
       });
     });
 
@@ -85,6 +105,12 @@ describe('de-noun-parser', () => {
         gender: 'f',
         genetive: null,
         plural: '-en',
+        definitions: [
+          'meeting',
+          'session',
+          'assembly',
+          'sitting',
+        ],
       });
     });
 
@@ -95,6 +121,9 @@ describe('de-noun-parser', () => {
         gender: 'm',
         genetive: '-s',
         plural: 'Honige',
+        definitions: [
+          'honey',
+        ],
       });
     });
 
@@ -105,6 +134,13 @@ describe('de-noun-parser', () => {
         gender: 'n',
         genetive: '-s',
         plural: 'Zentren',
+        definitions: [
+          'center, centre; central point',
+          '(politics) the centre, the moderate political parties',
+          '(politics) the Centre Party, a Catholic political party in pre-war Germany',
+          '(mathematics) the centre of a group, ring, Lie algebra, etc.',
+          '(chess) the spaces d4, d5, e4, e5 on a chessboard',
+        ],
       });
     });
 

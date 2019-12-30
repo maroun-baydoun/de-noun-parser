@@ -9,6 +9,8 @@
         "declarationDir": "./types"
     },
     "files": [
-        "./src/de-noun-parser.ts"
+        "./src/de-noun-parser.ts",
+        "./test/de-noun-parser.test.ts",
+        "./test/fixtures.ts",
     ]
 }
