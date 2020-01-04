@@ -22,6 +22,12 @@ describe('de-noun-parser', () => {
         genetive: null,
         plural: 'Küchen',
         diminutive: 'Küchlein',
+        template: {
+          text: '{{de-noun|f||Küchen|Küchlein}}',
+          arguments: 'f||Küchen|Küchlein',
+          startIndex: 12,
+          endIndex: 41,
+        },
       });
     });
 
@@ -32,6 +38,12 @@ describe('de-noun-parser', () => {
         gender: 'm',
         genetive: 'Kühlschrankes',
         plural: 'Kühlschränke',
+        template: {
+          text: '{{de-noun|m|Kühlschrankes|gen2=Kühlschranks|Kühlschränke}}',
+          arguments: 'm|Kühlschrankes|gen2=Kühlschranks|Kühlschränke',
+          startIndex: 12,
+          endIndex: 69,
+        },
       });
     });
 
@@ -42,6 +54,12 @@ describe('de-noun-parser', () => {
         gender: 'n',
         genetive: 'Flugzeugs',
         plural: 'Flugzeuge',
+        template: {
+          text: '{{de-noun|n|Flugzeugs|gen2=Flugzeuges|Flugzeuge}}',
+          arguments: 'n|Flugzeugs|gen2=Flugzeuges|Flugzeuge',
+          startIndex: 12,
+          endIndex: 60,
+        },
       });
     });
 
@@ -53,6 +71,12 @@ describe('de-noun-parser', () => {
         gender: 'f',
         genetive: null,
         plural: 'Lampen',
+        template: {
+          text: '{{de-noun|f||Lampen|Lämpchen|dim2=Lämplein}}',
+          arguments: 'f||Lampen|Lämpchen|dim2=Lämplein',
+          startIndex: 12,
+          endIndex: 55,
+        },
       });
     });
 
@@ -64,6 +88,12 @@ describe('de-noun-parser', () => {
         genderedForm: 'Briefträgerin',
         genetive: 'Briefträgers',
         plural: 'Briefträger',
+        template: {
+          text: '{{de-noun|m|Briefträgers|Briefträger|f=Briefträgerin}}',
+          arguments: 'm|Briefträgers|Briefträger|f=Briefträgerin',
+          startIndex: 12,
+          endIndex: 65,
+        },
       });
     });
 
@@ -75,6 +105,12 @@ describe('de-noun-parser', () => {
         genderedForm: 'Student',
         genetive: null,
         plural: 'Studentinnen',
+        template: {
+          text: '{{de-noun|f||Studentinnen|m=Student}}',
+          arguments: 'f||Studentinnen|m=Student',
+          startIndex: 12,
+          endIndex: 48,
+        },
       });
     });
 
@@ -85,6 +121,12 @@ describe('de-noun-parser', () => {
         gender: 'f',
         genetive: null,
         plural: '-en',
+        template: {
+          text: '{{de-noun|f}}',
+          arguments: 'f',
+          startIndex: 12,
+          endIndex: 24,
+        },
       });
     });
 
@@ -95,6 +137,12 @@ describe('de-noun-parser', () => {
         gender: 'm',
         genetive: '-s',
         plural: 'Honige',
+        template: {
+          text: '{{de-noun|m||Honige}}',
+          arguments: 'm||Honige',
+          startIndex: 12,
+          endIndex: 32,
+        },
       });
     });
 
@@ -105,6 +153,12 @@ describe('de-noun-parser', () => {
         gender: 'n',
         genetive: '-s',
         plural: 'Zentren',
+        template: {
+          text: '{{de-noun|n||Zentren}}',
+          arguments: 'n||Zentren',
+          startIndex: 12,
+          endIndex: 33,
+        },
       });
     });
 
