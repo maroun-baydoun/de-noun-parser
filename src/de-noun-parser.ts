@@ -23,6 +23,13 @@ export class ParsingError extends Error {
   }
 }
 
+export class TemplateNotFoundError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'TemplateNotFoundError';
+  }
+}
+
 export class UnrecognisedGenderError extends Error {
   constructor(message: string) {
     super(message);
@@ -34,6 +41,10 @@ export class UnrecognisedGenderError extends Error {
 export const parse = (wikitext: string): ParseResult => {
   const startIndex = wikitext.indexOf('{{de-noun|');
   const endIndex = wikitext.indexOf('}}', startIndex);
+
+  if (startIndex === -1) {
+    throw new TemplateNotFoundError('de-noun template not found in provided wikitext');
+  }
 
   const templateArguments = wikitext.substring(startIndex + '{{de-noun|'.length, endIndex);
   const tokens = templateArguments.split('|');

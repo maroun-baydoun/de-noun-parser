@@ -1,4 +1,4 @@
-import deNounParser, { UnrecognisedGenderError } from '../src/de-noun-parser';
+import deNounParser, { TemplateNotFoundError } from '../src/de-noun-parser';
 
 import {
   feminineFixture,
@@ -162,9 +162,9 @@ describe('de-noun-parser', () => {
       });
     });
 
-    it('throws UnrecognisedGenderError when unable to parse', () => {
+    it('throws TemplateNotFoundError when unable to parse', () => {
       expect(() => deNounParser('I am a random text')).toThrow(
-        new UnrecognisedGenderError('Expected m, f or n, but recieved I am a ra'),
+        new TemplateNotFoundError('de-noun template not found in provided wikitext'),
       );
     });
   });

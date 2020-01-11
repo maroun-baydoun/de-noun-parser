@@ -15,7 +15,8 @@ module.exports = {
     filename: '[name].js',
     library: '[name]',
     libraryTarget: 'umd',
-    umdNamedDefine: true
+    umdNamedDefine: true,
+    globalObject: 'this'
   },
   module: {
     rules: [
