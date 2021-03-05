@@ -7,7 +7,12 @@
 ### Install
 
 ``` 
-npm install de-noun-parser 
+npm i de-noun-parser 
+```
+Or
+
+``` 
+yarn add de-noun-parser 
 ```
 
 ### Usage
