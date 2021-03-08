@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   demo.innerHTML = templates
     .map(
       (template, index) =>
-        `<pre class="syntax-highlight-container demo-template-container"><code class="language-javascript">\`${template}\`</code></pre><div class="demo-parse-result-${index}"></div><button type="button" data-template="${template}" data-parse-result="demo-parse-result-${index}">Parse</button>`
+        `<pre class="syntax-highlight-container demo-template-container"><code class="language-javascript">\`${template}\`</code></pre><div class="demo-parse-result-${index}"></div><button class="button" type="button" data-template="${template}" data-parse-result="demo-parse-result-${index}">Parse</button>`
     )
-    .join(`<hr class="hr"/>`);
+    .join(`<hr class="hr--medium"/>`);
 });
