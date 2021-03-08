@@ -39,6 +39,10 @@ const parsed = parse(wikitext);
 
 If the parsing is not successful, a subclass of `ParsingError` is thrown.
 
+### Demo
+
+Try the demo [here](https://dev.maroun-baydoun.com/de-noun-parser/#demo).
+
 ### About de-noun template
 
 [Template:de-noun documentation](https://en.wiktionary.org/wiki/Template:de-noun)
