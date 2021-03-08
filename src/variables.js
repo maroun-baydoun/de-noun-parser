@@ -1,6 +1,7 @@
 module.exports = {
   title: "de-noun-parser",
-  description: "Parse Wikitext's de-noun template to extract the gender and plural, diminutive, genetive and gendered forms of German nouns.",
+  description:
+    "Parse Wikitext's de-noun template to extract the gender and plural, diminutive, genetive and gendered forms of German nouns.",
   heading1: "de-noun-parser",
   heading2: "Parse Wikitext's de-noun template",
   githubLink: "https://github.com/maroun-baydoun/de-noun-parser",

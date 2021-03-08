@@ -59,48 +59,15 @@ const wikitext = `
 const parsed = parse(wikitext);</code></pre>
         <hr class="hr--large"/>
         <h3>3. Parse result</h3>
-<table>
-<thead>
-    <tr>
-    <th>Field</th>
-    <th>Type</th>
-    <th>Note</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td><strong>gender</strong></td>
-    <td><code>string</code></td>
-    <td><code>m</code> or <code>f</code> or <code>n</code></td>
-    </tr>
-    <tr>
-    <td><strong>plural</strong></td>
-    <td><code>string</code></td>
-    <td>If <code>-en</code>, the plural form should default to the word + -en</td>
-    </tr>
-    <tr>
-    <td><strong>genetive</strong></td>
-    <td><code>string</code> | <code>null</code></td>
-    <td>If <code>-s</code>, the genetive form should default to the word + s. If <code>null</code>, the genetive form should default to the word itself</td>
-    </tr>
-    <tr>
-    <td><strong>diminutive</strong></td>
-    <td><code>string?</code></td>
-    <td>The diminutive form of the noun, or <code>undefined</code> when not applicable</td>
-    </tr>
-    <tr>
-    <td><strong>genderedForm</strong></td>
-    <td><code>string?</code></td>
-    <td>The feminine form of a masculine noun, the masculine form of a feminine noun, or <code>undefined</code> when not applicable</td>
-    </tr>
-    <tr>
-    <td>template</td>
-    <td><code>{ text: string, arguments: string, startIndex: number, endIndex: number }</code></td>
-    <td>The template's full text, its arguments and its start and end indexes within the provided wikitext</td>
-    </tr>
-    </tbody>
-</table>
+        <p>Check the parse result <a href="https://github.com/maroun-baydoun/de-noun-parser#parse-result" rel="external noopener" target="_blank" title="de-noun-parser documentation on Github">here</a></p>
+        <hr class="hr--large"/>
 
+        <h3>4. Demo</h3>
+        <div class="demo">
+            
+        </div>
+
+        
         <%if (htmlWebpackPlugin.options.linkHome) { %>
             <hr class="hr--large"/>
             <div class="link-home">

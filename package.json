@@ -42,12 +42,17 @@
     "webpack-merge": "5.7.3"
   },
   "dependencies": {
+    "de-noun-parser": "2.2.0",
     "prismjs": "1.23.0"
   },
   "features": {
     "react": false,
     "prismjs": {
-      "languages": ["shell", "javascript"]
+      "languages": [
+        "shell",
+        "javascript",
+        "json"
+      ]
     }
   }
 }
